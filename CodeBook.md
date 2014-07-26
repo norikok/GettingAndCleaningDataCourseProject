@@ -74,10 +74,13 @@ General notes on the variables:
 
 List of variables:
 
+1. subject - integer [1, 30]
+   an identification number for the volunteer that performed the activity during which the measurements were taken
+2. activity - factor
+   the activity performed by the subject during which the measurements were taken; it takes one of six values: WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING |
+
 |    | variable name | variacle description |
 | -- | ------------- | -------------------- |
-| 1 | subject | an identification number for the volunteer that performed the activity during which the measurements were taken |
-| 2 | activity | the activity performed by the subject during which the measurements were taken; it takes one of six values: WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING |
 | 3 | meanTimeBodyAccelerationX | |
 | 4 | meanTimeBodyAccelerationY | |
 | 5 | meanTimeBodyAccelerationZ | |
