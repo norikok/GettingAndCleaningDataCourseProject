@@ -112,7 +112,7 @@ List of variables:
    standard deviation of time domain body acceleration Jerk signal along x-axis
 19. **stdDevTimeBodyAccelerationJerkY** - numeric  
    standard deviation of time domain body acceleration Jerk signal along y-axis
-20. **stdDevTimeBodyAccelerationJerkZ** - numeric 
+20. **stdDevTimeBodyAccelerationJerkZ** - numeric   
    standard deviation of time domain body acceleration Jerk signal along z-axis
 21. **meanTimeBodyAngularVelocityX** - numeric  
    mean value of time domain body angular velocity signal along x-axis
@@ -158,7 +158,7 @@ List of variables:
    mean value of time domain body angular velocity Jerk signal magnitude
 42. **stdDevTimeBodyAngularVelocityJerkMagnitude** - numeric  
    standard deviation of time domain body angular velocity Jerk signal magnitude
-43. **meanFreqBodyAccelerationX - numeric  
+43. **meanFreqBodyAccelerationX** - numeric  
    mean value of frequency domain body acceleration signal along x-axis
 44. **meanFreqBodyAccelerationY** - numeric  
    mean value of frequency domain body acceleration signal along y-axis
