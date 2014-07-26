@@ -74,77 +74,75 @@ General notes on the variables:
 
 List of variables:
 
-1. subject - integer [1, 30]
-   an identification number for the volunteer that performed the activity during which the measurements were taken
-2. activity - factor
-   the activity performed by the subject during which the measurements were taken; it takes one of six values: WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING |
-
-|    | variable name | variacle description |
-| -- | ------------- | -------------------- |
-| 3 | meanTimeBodyAccelerationX | |
-| 4 | meanTimeBodyAccelerationY | |
-| 5 | meanTimeBodyAccelerationZ | |
-| 6 | stdDevTimeBodyAccelerationX | |
-| 7 | stdDevTimeBodyAccelerationY | |
-| 8 | stdDevTimeBodyAccelerationZ | |
-| 9 | meanTimeGravityAccelerationX | |
-| 10 | meanTimeGravityAccelerationY | |
-| 11 | meanTimeGravityAccelerationZ | |
-| 12 | stdDevTimeGravityAccelerationX | | 
-| 13 | stdDevTimeGravityAccelerationY | |
-| 14 | stdDevTimeGravityAccelerationZ | |
-| 15 | meanTimeBodyAccelerationJerkX | |
-| 16 | meanTimeBodyAccelerationJerkY | |
-| 17 | meanTimeBodyAccelerationJerkZ | |
-| 18 | stdDevTimeBodyAccelerationJerkX | |
-| 19 | stdDevTimeBodyAccelerationJerkY | |
-| 20 | stdDevTimeBodyAccelerationJerkZ | |
-| 21 | meanTimeBodyOrientationX | |
-| 22 | meanTimeBodyOrientationY | |
-| 23 | meanTimeBodyOrientationZ | |
-| 24 | stdDevTimeBodyOrientationX | | 
-| 25 | stdDevTimeBodyOrientationY | |
-| 26 | stdDevTimeBodyOrientationZ | |
-| 27 | meanTimeBodyOrientationJerkX | |
-| 28 | meanTimeBodyOrientationJerkY | |
-| 29 | meanTimeBodyOrientationJerkZ | |
-| 30 | stdDevTimeBodyOrientationJerkX | |
-| 31 | stdDevTimeBodyOrientationJerkY | |
-| 32 | stdDevTimeBodyOrientationJerkZ | |
-| 33 | meanTimeBodyAccelerationMagnitude | |
-| 34 | stdDevTimeBodyAccelerationMagnitude | |
-| 35 | meanTimeGravityAccelerationMagnitude | |
-| 36 | stdDevTimeGravityAccelerationMagnitude | |
-| 37 | meanTimeBodyAccelerationJerkMagnitude | |
-| 38 | stdDevTimeBodyAccelerationJerkMagnitude | |
-| 39 | meanTimeBodyOrientationMagnitude | |
-| 40 | stdDevTimeBodyOrientationMagnitude | |
-| 41 | meanTimeBodyOrientationJerkMagnitude | |
-| 42 | stdDevTimeBodyOrientationJerkMagnitude | |
-| 43 | meanFreqBodyAccelerationX | |
-| 44 | meanFreqBodyAccelerationY | |
-| 45 | meanFreqBodyAccelerationZ | |
-| 46 | stdDevFreqBodyAccelerationX | |
-| 47 | stdDevFreqBodyAccelerationY | |
-| 48 | stdDevFreqBodyAccelerationZ | |
-| 49 | meanFreqBodyAccelerationJerkX | |
-| 50 | meanFreqBodyAccelerationJerkY | |
-| 51 | meanFreqBodyAccelerationJerkZ | |
-| 52 | stdDevFreqBodyAccelerationJerkX | |
-| 53 | stdDevFreqBodyAccelerationJerkY | |
-| 54 | stdDevFreqBodyAccelerationJerkZ | |
-| 55 | meanFreqBodyOrientationX | |
-| 56 | meanFreqBodyOrientationY | |
-| 57 | meanFreqBodyOrientationZ | |
-| 58 | stdDevFreqBodyOrientationX | |
-| 59 | stdDevFreqBodyOrientationY | |
-| 60 | stdDevFreqBodyOrientationZ | |
-| 61 | meanFreqBodyAccelerationMagnitude | |
-| 62 | stdDevFreqBodyAccelerationMagnitude | |
-| 63 | meanFreqBodyAccelerationJerkMagnitude | |
-| 64 | stdDevFreqBodyAccelerationJerkMagnitude | |
-| 65 | meanFreqBodyOrientationMagnitude | |
-| 66 | stdDevFreqBodyOrientationMagnitude | |
-| 67 | meanFreqBodyOrientationJerkMagnitude | |
-| 68 | stdDevFreqBodyOrientationJerkMagnitude | |
-
+1. subject - integer [1, 30]   
+   an identification number for the volunteer that performed the activity during which the measurements were taken   
+2. activity - factor   
+   the activity performed by the subject during which the measurements were taken; it takes one of six values: WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING  
+3. meanTimeBodyAccelerationX - numeric  
+   mean value of time domain body acceleration signal along X-axis
+4. meanTimeBodyAccelerationY - numeric  
+5. meanTimeBodyAccelerationZ - numeric  
+6. stdDevTimeBodyAccelerationX - numeric  
+7. stdDevTimeBodyAccelerationY - numeric  
+8. stdDevTimeBodyAccelerationZ - numeric  
+9. meanTimeGravityAccelerationX - numeric  
+10. meanTimeGravityAccelerationY - numeric  
+11. meanTimeGravityAccelerationZ - numeric  
+12. stdDevTimeGravityAccelerationX - numeric   
+13. stdDevTimeGravityAccelerationY - numeric  
+14. stdDevTimeGravityAccelerationZ - numeric  
+15. meanTimeBodyAccelerationJerkX - numeric  
+16. meanTimeBodyAccelerationJerkY - numeric  
+17. meanTimeBodyAccelerationJerkZ - numeric  
+18. stdDevTimeBodyAccelerationJerkX - numeric  
+19. stdDevTimeBodyAccelerationJerkY - numeric  
+20. stdDevTimeBodyAccelerationJerkZ - numeric 
+21. meanTimeBodyOrientationX - numeric  
+22. meanTimeBodyOrientationY - numeric  
+23. meanTimeBodyOrientationZ - numeric 
+24. stdDevTimeBodyOrientationX - numeric   
+25. stdDevTimeBodyOrientationY - numeric  
+26. stdDevTimeBodyOrientationZ - numeric  
+27. meanTimeBodyOrientationJerkX - numeric  
+28. meanTimeBodyOrientationJerkY - numeric  
+29. meanTimeBodyOrientationJerkZ - numeric  
+30. stdDevTimeBodyOrientationJerkX - numeric  
+31. stdDevTimeBodyOrientationJerkY - numeric  
+32. stdDevTimeBodyOrientationJerkZ - numeric  
+33. meanTimeBodyAccelerationMagnitude - numeric  
+34. stdDevTimeBodyAccelerationMagnitude - numeric  
+35. meanTimeGravityAccelerationMagnitude - numeric  
+36. stdDevTimeGravityAccelerationMagnitude - numeric  
+37. meanTimeBodyAccelerationJerkMagnitude - numeric  
+38. stdDevTimeBodyAccelerationJerkMagnitude - numeric  
+39. meanTimeBodyOrientationMagnitude - numeric  
+40. stdDevTimeBodyOrientationMagnitude - numeric  
+41. meanTimeBodyOrientationJerkMagnitude - numeric  
+42. stdDevTimeBodyOrientationJerkMagnitude - numeric  
+43. meanFreqBodyAccelerationX - numeric  
+44. meanFreqBodyAccelerationY - numeric  
+45. meanFreqBodyAccelerationZ - numeric  
+46. stdDevFreqBodyAccelerationX - numeric  
+47. stdDevFreqBodyAccelerationY - numeric  
+48. stdDevFreqBodyAccelerationZ - numeric  
+49. meanFreqBodyAccelerationJerkX - numeric  
+50. meanFreqBodyAccelerationJerkY - numeric  
+51. meanFreqBodyAccelerationJerkZ - numeric  
+52. stdDevFreqBodyAccelerationJerkX - numeric  
+53. stdDevFreqBodyAccelerationJerkY - numeric  
+54. stdDevFreqBodyAccelerationJerkZ - numeric  
+55. meanFreqBodyOrientationX - numeric  
+56. meanFreqBodyOrientationY - numeric  
+57. meanFreqBodyOrientationZ - numeric  
+58. stdDevFreqBodyOrientationX - numeric  
+59. stdDevFreqBodyOrientationY - numeric  
+60. stdDevFreqBodyOrientationZ - numeric  
+61. meanFreqBodyAccelerationMagnitude - numeric  
+62. stdDevFreqBodyAccelerationMagnitude - numeric  
+63. meanFreqBodyAccelerationJerkMagnitude - numeric  
+64. stdDevFreqBodyAccelerationJerkMagnitude - numeric  
+65. meanFreqBodyOrientationMagnitude - numeric  
+66. stdDevFreqBodyOrientationMagnitude - numeric  
+67. meanFreqBodyOrientationJerkMagnitude - numeric  
+68. stdDevFreqBodyOrientationJerkMagnitude - numeric 
+   standard deviation
