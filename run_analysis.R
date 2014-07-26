@@ -56,7 +56,7 @@ data_merged$activity <- data_merged$V2
 data_merged <- data_merged[, 1:ncol(data_merged) - 1]
 
 
-# (4) Assign descriptive activity names
+# (4) Assign descriptive variable names
 colNames <- sub("BodyBody", "Body", names(data_merged))
 colNames <- sub("tBody", "TimeBody", colNames)
 colNames <- sub("tGravity", "TimeGravity", colNames)
@@ -65,7 +65,8 @@ colNames <- sub("Acc", "Acceleration", colNames)
 colNames <- sub("Mag", "Magnitude", colNames)
 colNames <- sub("Gyro", "Orientation", colNames)
 stat <- paste0(sub("FALSE", "",
-                   sub("TRUE", "mean", as.character(grepl("mean", colNames)))),                sub("FALSE", "",
+                   sub("TRUE", "mean", as.character(grepl("mean", colNames)))),
+               sub("FALSE", "",
                    sub("TRUE", "stdDev", as.character(grepl("std", colNames)))))
 colNames <- sub("mean()", "", colNames, fixed = TRUE)
 colNames <- sub("std()", "", colNames, fixed = TRUE)
