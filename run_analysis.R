@@ -63,7 +63,7 @@ colNames <- sub("tGravity", "TimeGravity", colNames)
 colNames <- sub("fBody", "FreqBody", colNames)
 colNames <- sub("Acc", "Acceleration", colNames)
 colNames <- sub("Mag", "Magnitude", colNames)
-colNames <- sub("Gyro", "Orientation", colNames)
+colNames <- sub("Gyro", "AngularVelocity", colNames)
 stat <- paste0(sub("FALSE", "",
                    sub("TRUE", "mean", as.character(grepl("mean", colNames)))),
                sub("FALSE", "",

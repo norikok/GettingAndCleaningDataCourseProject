@@ -50,7 +50,7 @@ The script (run_analysis.R) is responsible for converting the original data file
 
 3. The actual activity names/labels (e.g. walking) replace the integers representing the activity during which the measurements were taken.  This utilizes the activity_labels.txt file, which served as the lookup table.
 
-4. The original variable names (from features.txt) are replaced by a more descriptive set.  This is done by substituting each part of the original name with an expanded/clearer version (e.g. 'Acc' is replaced by 'Acceleration').
+4. The original variable names (from features.txt) are replaced by a more descriptive set.  This is done by substituting each part of the original name with an expanded/clearer version (e.g. 'Acc' is replaced by 'Acceleration').  It should be noted that 'Gyro' has been changed to 'AngularVelocity' as that was the variable measured by the gyroscope originally.
 
 5. The data set is collapsed by taking the mean of each variable for each subject-activity pair.  The resulting tidy data set has 180 rows, which is consistent with the fact that there are 30 volunteers and 6 activities for which measurements were taken.
 
@@ -74,75 +74,139 @@ General notes on the variables:
 
 List of variables:
 
-1. subject - integer [1, 30]   
+1. **subject** - integer [1, 30]   
    an identification number for the volunteer that performed the activity during which the measurements were taken   
-2. activity - factor   
+2. **activity** - factor   
    the activity performed by the subject during which the measurements were taken; it takes one of six values: WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING  
-3. meanTimeBodyAccelerationX - numeric  
-   mean value of time domain body acceleration signal along X-axis
-4. meanTimeBodyAccelerationY - numeric  
-5. meanTimeBodyAccelerationZ - numeric  
-6. stdDevTimeBodyAccelerationX - numeric  
-7. stdDevTimeBodyAccelerationY - numeric  
-8. stdDevTimeBodyAccelerationZ - numeric  
-9. meanTimeGravityAccelerationX - numeric  
-10. meanTimeGravityAccelerationY - numeric  
-11. meanTimeGravityAccelerationZ - numeric  
-12. stdDevTimeGravityAccelerationX - numeric   
-13. stdDevTimeGravityAccelerationY - numeric  
-14. stdDevTimeGravityAccelerationZ - numeric  
-15. meanTimeBodyAccelerationJerkX - numeric  
-16. meanTimeBodyAccelerationJerkY - numeric  
-17. meanTimeBodyAccelerationJerkZ - numeric  
-18. stdDevTimeBodyAccelerationJerkX - numeric  
-19. stdDevTimeBodyAccelerationJerkY - numeric  
-20. stdDevTimeBodyAccelerationJerkZ - numeric 
-21. meanTimeBodyOrientationX - numeric  
-22. meanTimeBodyOrientationY - numeric  
-23. meanTimeBodyOrientationZ - numeric 
-24. stdDevTimeBodyOrientationX - numeric   
-25. stdDevTimeBodyOrientationY - numeric  
-26. stdDevTimeBodyOrientationZ - numeric  
-27. meanTimeBodyOrientationJerkX - numeric  
-28. meanTimeBodyOrientationJerkY - numeric  
-29. meanTimeBodyOrientationJerkZ - numeric  
-30. stdDevTimeBodyOrientationJerkX - numeric  
-31. stdDevTimeBodyOrientationJerkY - numeric  
-32. stdDevTimeBodyOrientationJerkZ - numeric  
-33. meanTimeBodyAccelerationMagnitude - numeric  
-34. stdDevTimeBodyAccelerationMagnitude - numeric  
-35. meanTimeGravityAccelerationMagnitude - numeric  
-36. stdDevTimeGravityAccelerationMagnitude - numeric  
-37. meanTimeBodyAccelerationJerkMagnitude - numeric  
-38. stdDevTimeBodyAccelerationJerkMagnitude - numeric  
-39. meanTimeBodyOrientationMagnitude - numeric  
-40. stdDevTimeBodyOrientationMagnitude - numeric  
-41. meanTimeBodyOrientationJerkMagnitude - numeric  
-42. stdDevTimeBodyOrientationJerkMagnitude - numeric  
-43. meanFreqBodyAccelerationX - numeric  
-44. meanFreqBodyAccelerationY - numeric  
-45. meanFreqBodyAccelerationZ - numeric  
-46. stdDevFreqBodyAccelerationX - numeric  
-47. stdDevFreqBodyAccelerationY - numeric  
-48. stdDevFreqBodyAccelerationZ - numeric  
-49. meanFreqBodyAccelerationJerkX - numeric  
-50. meanFreqBodyAccelerationJerkY - numeric  
-51. meanFreqBodyAccelerationJerkZ - numeric  
-52. stdDevFreqBodyAccelerationJerkX - numeric  
-53. stdDevFreqBodyAccelerationJerkY - numeric  
-54. stdDevFreqBodyAccelerationJerkZ - numeric  
-55. meanFreqBodyOrientationX - numeric  
-56. meanFreqBodyOrientationY - numeric  
-57. meanFreqBodyOrientationZ - numeric  
-58. stdDevFreqBodyOrientationX - numeric  
-59. stdDevFreqBodyOrientationY - numeric  
-60. stdDevFreqBodyOrientationZ - numeric  
-61. meanFreqBodyAccelerationMagnitude - numeric  
-62. stdDevFreqBodyAccelerationMagnitude - numeric  
-63. meanFreqBodyAccelerationJerkMagnitude - numeric  
-64. stdDevFreqBodyAccelerationJerkMagnitude - numeric  
-65. meanFreqBodyOrientationMagnitude - numeric  
-66. stdDevFreqBodyOrientationMagnitude - numeric  
-67. meanFreqBodyOrientationJerkMagnitude - numeric  
-68. stdDevFreqBodyOrientationJerkMagnitude - numeric 
-   standard deviation
+3. **meanTimeBodyAccelerationX** - numeric  
+   mean value of time domain body acceleration signal along x-axis
+4. **meanTimeBodyAccelerationY** - numeric  
+   mean value of time domain body acceleration signal along y-axis
+5. **meanTimeBodyAccelerationZ** - numeric  
+   mean value of time domain body acceleration signal along z-axis
+6. **stdDevTimeBodyAccelerationX** - numeric  
+   standard deviation of time domain body acceleration signal along x-axis
+7. **stdDevTimeBodyAccelerationY** - numeric  
+   standard deviation of time domain body acceleration signal along y-axis
+8. **stdDevTimeBodyAccelerationZ** - numeric  
+   standard deviation of time domain body acceleration signal along z-axis
+9. **meanTimeGravityAccelerationX** - numeric  
+   mean value of time domain gravity acceleration signal along x-axis
+10. **meanTimeGravityAccelerationY** - numeric  
+   mean value of time domain gravity acceleration signal along y-axis
+11. **meanTimeGravityAccelerationZ** - numeric  
+   mean value of time domain gravity acceleration signal along z-axis
+12. **stdDevTimeGravityAccelerationX** - numeric   
+   standard deviation of time domain gravity acceleration signal along x-axis
+13. **stdDevTimeGravityAccelerationY** - numeric  
+   standard deviation of time domain gravity acceleration signal along y-axis
+14. **stdDevTimeGravityAccelerationZ** - numeric  
+   standard deviation of time domain gravity acceleration signal along z-axis
+15. **meanTimeBodyAccelerationJerkX** - numeric  
+   mean value of time domain body acceleration Jerk signal along x-axis
+16. **meanTimeBodyAccelerationJerkY** - numeric  
+   mean value of time domain body acceleration Jerk signal along y-axis
+17. **meanTimeBodyAccelerationJerkZ** - numeric  
+   mean value of time domain body acceleration Jerk signal along z-axis
+18. **stdDevTimeBodyAccelerationJerkX** - numeric  
+   standard deviation of time domain body acceleration Jerk signal along x-axis
+19. **stdDevTimeBodyAccelerationJerkY** - numeric  
+   standard deviation of time domain body acceleration Jerk signal along y-axis
+20. **stdDevTimeBodyAccelerationJerkZ** - numeric 
+   standard deviation of time domain body acceleration Jerk signal along z-axis
+21. **meanTimeBodyAngularVelocityX** - numeric  
+   mean value of time domain body angular velocity signal along x-axis
+22. **meanTimeBodyAngularVelocityY** - numeric  
+   mean value of time domain body angular velocity signal along y-axis
+23. **meanTimeBodyAngularVelocityZ** - numeric  
+   mean value of time domain body angular velocity signal along z-axis
+24. **stdDevTimeBodyAngularVelocityX** - numeric   
+   standard deviation of time domain body angular velocity signal along x-axis
+25. **stdDevTimeBodyAngularVelocityY** - numeric  
+   standard deviation of time domain body angular velocity signal along y-axis
+26. **stdDevTimeBodyAngularVelocityZ** - numeric  
+   standard deviation of time domain body angular velocity signal along z-axis
+27. **meanTimeBodyAngularVelocityJerkX** - numeric  
+   mean value of time domain body angular velocity Jerk signal along x-axis
+28. **meanTimeBodyAngularVelocityJerkY** - numeric  
+   mean value of time domain body angular velocity Jerk signal along y-axis
+29. **meanTimeBodyAngularVelocityJerkZ** - numeric  
+   mean value of time domain body angular velocity Jerk signal along z-axis
+30. **stdDevTimeBodyAngularVelocityJerkX** - numeric  
+   standard deviation of time domain body angular velocity Jerk signal along x-axis
+31. **stdDevTimeBodyAngularVelocityJerkY** - numeric  
+   standard deviation of time domain body angular velocity Jerk signal along y-axis
+32. **stdDevTimeBodyAngularVelocityJerkZ** - numeric  
+   standard deviation of time domain body angular velocity Jerk signal along z-axis
+33. **meanTimeBodyAccelerationMagnitude** - numeric  
+   mean value of time domain body acceleration signal magnitude
+34. **stdDevTimeBodyAccelerationMagnitude** - numeric  
+   standard deviation of time domain body acceleration signal magnitude
+35. **meanTimeGravityAccelerationMagnitude** - numeric  
+   mean value of time domain gravity acceleration signal magnitude 
+36. **stdDevTimeGravityAccelerationMagnitude** - numeric  
+   standard deviation of time domain gravity acceleration signal magnitude 
+37. **meanTimeBodyAccelerationJerkMagnitude** - numeric  
+   mean value of time domain body acceleration Jerk signal magnitude
+38. **stdDevTimeBodyAccelerationJerkMagnitude** - numeric  
+   standard deviation of time domain body acceleration Jerk signal magnitude
+39. **meanTimeBodyAngularVelocityMagnitude** - numeric  
+   mean value of time domain body angular velocity signal magnitude
+40. **stdDevTimeBodyAngularVelocityMagnitude** - numeric  
+   standard deviation of time domain body angular velocity signal magnitude
+41. **meanTimeBodyAngularVelocityJerkMagnitude** - numeric  
+   mean value of time domain body angular velocity Jerk signal magnitude
+42. **stdDevTimeBodyAngularVelocityJerkMagnitude** - numeric  
+   standard deviation of time domain body angular velocity Jerk signal magnitude
+43. **meanFreqBodyAccelerationX - numeric  
+   mean value of frequency domain body acceleration signal along x-axis
+44. **meanFreqBodyAccelerationY** - numeric  
+   mean value of frequency domain body acceleration signal along y-axis
+45. **meanFreqBodyAccelerationZ** - numeric  
+   mean value of frequency domain body acceleration signal along z-axis
+46. **stdDevFreqBodyAccelerationX** - numeric  
+   standard deviation of frequency domain body acceleration signal along x-axis
+47. **stdDevFreqBodyAccelerationY** - numeric  
+   standard deviation of frequency domain body acceleration signal along y-axis
+48. **stdDevFreqBodyAccelerationZ** - numeric  
+   standard deviation of frequency domain body acceleration signal along z-axis
+49. **meanFreqBodyAccelerationJerkX** - numeric  
+   mean value of frequency domain body acceleration Jerk signal along x-axis
+50. **meanFreqBodyAccelerationJerkY** - numeric  
+   mean value of frequency domain body acceleration Jerk signal along y-axis
+51. **meanFreqBodyAccelerationJerkZ** - numeric  
+   mean value of frequency domain body acceleration Jerk signal along z-axis
+52. **stdDevFreqBodyAccelerationJerkX** - numeric  
+   standard deviation of frequency domain body acceleration Jerk signal along x-axis
+53. **stdDevFreqBodyAccelerationJerkY** - numeric  
+   standard deviation of frequency domain body acceleration Jerk signal along y-axis
+54. **stdDevFreqBodyAccelerationJerkZ** - numeric  
+   standard deviation of frequency domain body acceleration Jerk signal along z-axis
+55. **meanFreqBodyAngularVelocityX** - numeric  
+   mean value of frequency domain body angular velocity signal along x-axis
+56. **meanFreqBodyAngularVelocityY** - numeric  
+   mean value of frequency domain body angular velocity signal along y-axis
+57. **meanFreqBodyAngularVelocityZ** - numeric  
+   mean value of frequency domain body angular velocity signal along z-axis
+58. **stdDevFreqBodyAngularVelocityX** - numeric  
+   standard deviation of frequency domain body angular velocity signal along x-axis
+59. **stdDevFreqBodyAngularVelocityY** - numeric  
+   standard deviation of frequency domain body angular velocity signal along y-axis
+60. **stdDevFreqBodyAngularVelocityZ** - numeric  
+   standard deviation of frequency domain body angular velocity signal along z-axis
+61. **meanFreqBodyAccelerationMagnitude** - numeric  
+   mean value of frequency domain body acceleration signal magnitude
+62. **stdDevFreqBodyAccelerationMagnitude** - numeric  
+   standard deviation of frequency domain body acceleration signal magnitude
+63. **meanFreqBodyAccelerationJerkMagnitude** - numeric  
+   mean value of frequency domain body acceleration Jerk signal magnitude
+64. **stdDevFreqBodyAccelerationJerkMagnitude** - numeric  
+   standard deviation of frequency domain body acceleration Jerk signal magnitude
+65. **meanFreqBodyAngularVelocityMagnitude** - numeric  
+   mean value of frequency domain body angular velocity signal magnitude
+66. **stdDevFreqBodyAngularVelocityMagnitude** - numeric  
+   standard deviation of frequency domain body angular velocity signal magnitude
+67. **meanFreqBodyAngularVelocityJerkMagnitude** - numeric  
+   mean value of frequency domain body angular velocity Jerk signal magnitude
+68. **stdDevFreqBodyAngularVelocityJerkMagnitude** - numeric  
+   standard deviation of frequency domain body angular velocity Jerk signal magnitude
